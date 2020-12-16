@@ -11,12 +11,7 @@ interface Request {
 }
 
 class CreateTransactionService {
-  public async execute({
-    title,
-    type,
-    value,
-    category,
-  }: Request): Promise<Transaction> {
+  public async execute({ title, type, value }: Request): Promise<Transaction> {
     const transactionRepository = getCustomRepository(TransactionsRepository);
 
     const transaction = transactionRepository.create({
